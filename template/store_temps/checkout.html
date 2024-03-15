@@ -206,11 +206,11 @@ function confirm(){
                 console.log(total)
                total2 = total - (total * (data.coupons[i].value / 100))
                 $('#bttnn').empty()
-                $('#bttnn').append(
-                    `
-                    <button type="button" class="btn btn-success disabled"  onclick="confirm()" style="position: relative;left: 9%;top: 10%;">confirm</button>
-                    `
-                )
+                // $('#bttnn').append(
+                //     `
+                //     <button type="button" class="btn btn-success disabled"  onclick="confirm()" style="position: relative;left: 9%;top: 10%;">confirm</button>
+                //     `
+                // )
             
                 get_offer_coupon(total2, couponn)
             
@@ -403,6 +403,11 @@ function send_diteles_to_bot(){
         console.log('form sumed')
         if(coupp == undefined){
             coupp = ''
+        }
+        if(total2 == undefined){
+            var to = document.getElementById('total').innerHTML
+            total = parseFloat(to)
+            total2 = total
         }
         console.log(coupp)
         console.log(total2)
