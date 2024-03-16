@@ -5,10 +5,10 @@ ENV PYTHONUNBUFFRED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
 # Install system dependencies
-RUN apt-get update
+#RUN apt-get update
 
 # install dependencies
-RUN pip install --upgrade pip
+#RUN pip install --upgrade pip
 COPY ./requirements.txt /app/
 RUN pip install -r requirements.txt
 
