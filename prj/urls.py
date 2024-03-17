@@ -22,11 +22,12 @@ from django.conf import settings
 
 from django.contrib.auth import views as auth_views
 from django.conf.urls import handler404
+from prjapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('prjapp.urls')),
-
+    #path('' , views.maintenance , name= 'maintenance'),
     path('reset_password/' , auth_views.PasswordResetView.as_view(template_name = 'auth/forget_password.html') , name = 'reset_password'),
     path('reset_password_sent/' , auth_views.PasswordResetDoneView.as_view(template_name = 'auth/reset_password_sent.html') , name = 'password_reset_done'),
     path('reset/<uidb64>/<token>/' , auth_views.PasswordResetConfirmView.as_view(template_name = 'auth/reset_password.html') , name = 'password_reset_confirm'),
